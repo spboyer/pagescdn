@@ -1,0 +1,21 @@
+{
+  "name": "pagescdn",
+  "description": "App for demonstrating pushing assets to Azure CDN during publish",
+  "authors": "Shayne Boyer",
+  "version": "0.0.1",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "dependencies": {
+    "del": "3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-azure-storage": "^0.8.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-uglify": "^3.0.0",
+    "merge-stream": "^1.0.1"
+  }
+}
