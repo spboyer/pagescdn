@@ -1,7 +1,7 @@
 _development.sh
 _production.sh
 
-wwwroot/lib/
+node_modules/
 
 /Properties/launchSettings.json
 
