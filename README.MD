@@ -34,7 +34,7 @@ Pushing the images to the Azure CDN is accomplished through a gulp task.
 ```javascript
 var azure = require('gulp-azure-storage');
 
-gulp.task("publish", ["min"], function() {
+gulp.task("pushimages", function() {
     return gulp.src("wwwroot/images/**")
       .pipe(azure.upload({
           account:    process.env.ACCOUNT_NAME,
@@ -53,10 +53,16 @@ The `gulp-azure-storage` npm package requires three parameters:
 Notice the script accesses the values from `process.env.*`, in my case the values are set via script locally prior to running. *I have a _development.sh and _production.sh file allowing for testing each environment*
 
 ```bash
-export ASPNETCORE_ENVIRONMENT="Development"
-export ACCOUNT_NAME="my-account-name"
-export ACCOUNT_KEY="really-long-key-value"
-export CONTAINER_NAME="images"
+#!/bin/bash
+ASPNETCORE_ENVIRONMENT="Development"
+ACCOUNT_NAME="my-account-name"
+ACCOUNT_KEY="really-long-key-value"
+CONTAINER_NAME="images"
+
+echo "ASP.NET Environment:" $ASPNETCORE_ENVIRONMENT
+echo "Storage Account: " $ACCOUNT_NAME
+echo "Account Key: " $ACCOUNT_KEY
+echo "Container Name: " $CONTAINER_NAME
 ```
 
 For CI/CD processes like VSTS or Travis etc.; set these ENV variables where appropriate in the build scripts.
@@ -64,6 +70,8 @@ For CI/CD processes like VSTS or Travis etc.; set these ENV variables where appr
 ## Options for running
 
 Pre-build commands to the csproj file which runs the process upon F5 in Visual Studio or `dotnet build` on the command-line.
+
+*The `gulp publish` task calls the `min` and `pushimages` task*
 
 ```xml
   <Target Name="MyPreCompileTarget" BeforeTargets="Build">

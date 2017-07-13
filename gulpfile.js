@@ -76,7 +76,9 @@ function getBundles(regexPattern) {
     });
 }
 
-gulp.task("publish", ["min"], function() {
+gulp.task("publish", ["min", "pushimages"]);
+
+gulp.task("pushimages", function() {
     return gulp.src("wwwroot/images/**")
       .pipe(azure.upload({
           account:    process.env.ACCOUNT_NAME,
