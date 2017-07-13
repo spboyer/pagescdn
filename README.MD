@@ -86,3 +86,18 @@ gulp publish
 ```
 
 VSTS - Build the pipleline that does the process of executing the scripts and pushes the application to the necessary slot location in Azure.
+
+Running the command yeilds the following output:
+
+```bash
+$ gulp publish
+Using gulpfile ~/pagescdn/gulpfile.js
+Starting 'min:js'...
+Starting 'min:css'...
+Starting 'min:html'...
+Starting 'pushimages'...
+Finished 'min:js' after 78 ms
+Finished 'min:css' after 94 ms
+uploading [======] 100%
+6 files uploaded.
+```
