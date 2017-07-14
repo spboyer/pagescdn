@@ -14,6 +14,7 @@ The TagHelper inherits from the ImageTagHelper and uses the `asp-append-version`
 <img src="/images/captamerica.jpg"
     asp-cdn-uri="https://shboyer2.azureedge.net"
     asp-append-version="true" alt="Captain America"
+    asp-fallback-src="~/images/deadpool.jpg"
 />
 ```
 
