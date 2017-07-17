@@ -5,12 +5,9 @@
     <UserSecretsId>aspnet-pagescdn-CB1741C1-8EED-4948-95A9-E0B7128521C2</UserSecretsId>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0-preview1-final" />
-  </ItemGroup>
-  <ItemGroup>
-    <DotNetCliToolReference Include="Microsoft.Extensions.SecretManager.Tools" Version="2.0.0-preview1-final" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0-preview2-final" />
   </ItemGroup>
   <Target Name="MyPreCompileTarget" BeforeTargets="Build">
-    <Exec Command="gulp publish" />
+   <Exec Command="gulp publish" />
   </Target>
 </Project>

@@ -1,0 +1,3 @@
+*
+!bin/Docker/publish/*
+!bin/Docker/empty/
