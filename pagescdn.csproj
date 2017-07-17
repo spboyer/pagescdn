@@ -7,7 +7,4 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0-preview2-final" />
   </ItemGroup>
-  <Target Name="MyPreCompileTarget" BeforeTargets="Build">
-   <Exec Command="gulp publish" />
-  </Target>
 </Project>
